@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Verification</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.formBox{
+padding:25px;
+text-align:center;
+}
+
+.formBox h1{
+color:#0d7c3b;
+margin-bottom:10px;
+}
+
+.formBox p{
+color:#555;
+margin-bottom:25px;
+}
+
+input,select{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:2px solid #0d7c3b;
+border-radius:10px;
+font-size:18px;
+box-sizing:border-box;
+}
+
+.startBtn{
+width:100%;
+padding:16px;
+background:#16a34a;
+color:white;
+border:none;
+border-radius:12px;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+.startBtn:hover{
+background:#138a3d;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="formBox">
+
+<h1>Student Verification</h1>
+
+<p>Please enter your details before voting.</p>
+
+<input type="text" id="studentName" placeholder="Enter Student Name">
+
+<select id="studentClass">
+<option value="">Select Class</option>
+<option>Nursery</option>
+<option>LKG</option>
+<option>UKG</option>
+<option>1st</option>
+<option>2nd</option>
+<option>3rd</option>
+<option>4th</option>
+<option>5th</option>
+<option>6th</option>
+<option>7th</option>
+<option>8th</option>
+<option>9th</option>
+<option>10th</option>
+<option>11th</option>
+<option>12th</option>
+</select>
+
+<button class="startBtn" onclick="startVoting()">
+START VOTING
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function startVoting(){
+
+const name=document.getElementById("studentName").value.trim();
+const cls=document.getElementById("studentClass").value;
+
+if(name=="" || cls==""){
+alert("Please enter Student Name and Class.");
+return;
+}
+
+localStorage.setItem("Student Name",name);
+localStorage.setItem("Student Class",cls);
+
+window.location.href="headgirl.html";
+
+}
+
+</script>
+
+</body>
+</html>

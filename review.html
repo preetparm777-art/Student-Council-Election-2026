@@ -1,0 +1,314 @@
+ <!DOCTYPE html>
+
+  
+<title>Review Your Vote</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#F8F5EF;
+}
+
+.header{
+    background:linear-gradient(135deg,#0d7c3b,#14964a);
+    padding:8px 10px;      /* Pehle 10px 18px tha */
+    border-radius:16px;
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+    margin:6px 10px 0 10px; /* Top Right Bottom Left */
+}
+.schoolBox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+}
+
+.schoolText h2{
+    color:white;
+    font-size:18px;
+    line-height:20px;
+    font-weight:700;
+    margin:0;
+}
+
+.logo{
+    width:70px;
+    height:85px;
+    object-fit:contain;
+    background:#fff;
+    padding:3px;
+    border-radius:8px;
+    flex-shrink:0;
+}
+
+.schoolBox h2{
+    color:#fff;
+    font-size:18px;
+    line-height:20px;
+    font-weight:700;
+    margin:0;
+}
+
+.electionTag{
+    display:inline-block;
+    background:#F4C542;
+    color:#000;
+    padding:8px 18px;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
+    margin:10px auto 0;
+    border:2px solid #D4A017;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+.title{
+    text-align:center;
+    margin:12px 0 15px;
+}
+
+.title h1{
+    font-size:24px;
+    color:#8B6B00;
+    font-weight:700;
+    margin:0;
+    line-height:1.2;
+}
+
+.review-box{
+width:94%;
+margin:auto;
+background:white;
+padding:8px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.review-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:8px 10px;
+border-bottom:1px solid #ddd;
+font-size:17px;
+line-height:1.2;
+}
+
+.buttons{
+text-align:center;
+margin:30px;
+}
+
+.back{
+background:#F39C12;
+color:white;
+border:none;
+padding:15px 30px;
+font-size:20px;
+border-radius:8px;
+margin-right:20px;
+cursor:pointer;
+}
+
+.submit{
+background:#2E7D32;
+color:white;
+border:none;
+padding:15px 35px;
+font-size:20px;
+border-radius:8px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="schoolBox">
+
+    <img src="Images/logo.jpg" class="logo">
+
+    <div>
+        <h2>
+            MSG HI-TECH<br>
+            GURUKUL<br>
+            GIRLS' SCHOOL, BUDNI
+        </h2>
+    </div>
+
+</div>
+
+    <div class="electionTag">
+        STUDENT COUNCIL ELECTION 2026
+    </div>
+
+</div>
+
+</div>
+
+<div class="title">
+    <h1>REVIEW YOUR VOTE</h1>
+</div>
+
+<div class="review-box">
+
+<div class="review-item">
+<span>Head Girl</span>
+<span id="headgirl">Not Selected</span>
+</div>
+
+<div class="review-item">
+<span>Vice Head Girl</span>
+<span id="viceheadgirl">Not Selected</span>
+</div>
+
+<div class="review-item">
+<span>CCA Captain</span>
+<span id="cca">Not Selected</span>
+</div>
+
+<div class="review-item">
+<span>Vice CCA Captain</span>
+<span id="vicecca">Not Selected</span>
+</div>
+
+<div class="review-item">
+<span>Sports Captain</span>
+<span id="sports">Not Selected</span>
+</div>
+
+<div class="review-item">
+<span>Assembly Captain</span>
+<span id="assembly">Not Selected</span>
+</div>
+
+<div class="review-item">
+<span>Transport Captain</span>
+<span id="transport">Not Selected</span>
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button class="back" onclick="history.back()">BACK</button>
+
+<button class="submit" onclick="submitVote()">SUBMIT VOTE</button>
+
+<div id="successPopup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:9999;">
+
+<div style="background:#fff;padding:30px;border-radius:20px;text-align:center;width:85%;max-width:400px;animation:pop 0.3s;">
+
+<h2 style="color:#2E7D32;font-size:30px;">
+Your Vote Has Been Submitted Successfully
+</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("headgirl").innerHTML = localStorage.getItem("Head Girl") || "Not Selected";
+document.getElementById("viceheadgirl").innerHTML = localStorage.getItem("Vice Head Girl") || "Not Selected";
+document.getElementById("assembly").innerHTML = localStorage.getItem("Assembly Captain") || "Not Selected";
+document.getElementById("cca").innerHTML = localStorage.getItem("CCA Captain") || "Not Selected";
+document.getElementById("vicecca").innerHTML = localStorage.getItem("Vice CCA Captain") || "Not Selected";
+document.getElementById("sports").innerHTML = localStorage.getItem("Sports Captain") || "Not Selected";
+document.getElementById("transport").innerHTML = localStorage.getItem("Transport Captain") || "Not Selected";
+
+</script>
+<script>
+
+</script>
+
+<div id="successMessage" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+justify-content:center;
+align-items:center;
+z-index:9999;">
+
+<div style="
+background:white;
+padding:35px;
+border-radius:20px;
+text-align:center;
+width:85%;
+max-width:420px;">
+
+<div style="font-size:70px;">✅</div>
+
+<h2 style="color:#2E7D32;font-size:30px;">
+Your Vote Has Been Submitted Successfully
+</h2>
+
+</div>
+
+</div>
+
+<script>
+
+
+
+async function submitVote() {
+
+const data = {
+  headGirl: localStorage.getItem("Head Girl"),
+  viceHeadGirl: localStorage.getItem("Vice Head Girl"),
+  ccaCaptain: localStorage.getItem("CCA Captain"),
+  viceCcaCaptain: localStorage.getItem("Vice CCA Captain"),
+  sportsCaptain: localStorage.getItem("Sports Captain"),
+  assemblyCaptain: localStorage.getItem("Assembly Captain"),
+  transportCaptain: localStorage.getItem("Transport Captain")
+};
+
+try {
+
+const response = await fetch("https://script.google.com/macros/s/AKfycbxd-pgiiB45XhJqAO9i25qCerpZzvTKu40zAQEYVYbnitUucwxGM7ImXNwadAzWQRXEKQ/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+});
+
+alert(await response.text());
+
+} catch (err) {
+  alert(err);
+}
+
+var clap = new Audio("clap.mp3");
+clap.play();
+
+document.getElementById("successMessage").style.display = "flex";
+
+setTimeout(function () {
+  window.location.href = "nextvoter.html";
+}, 2000);
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+

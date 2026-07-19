@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Council Election 2026</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0b5d2a,#178c43,#2fb55d);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:15px;
+}
+
+.container{
+width:100%;
+max-width:430px;
+background:#fff;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.30);
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#0d7c3b,#14964a);
+padding:18px;
+}
+
+.schoolBox{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo{
+width:70px;
+height:90px;
+object-fit:contain;
+background:#fff;
+border-radius:10px;
+padding:4px;
+}
+
+.schoolName{
+color:#fff;
+font-size:20px;
+font-weight:bold;
+line-height:25px;
+}
+
+.electionTag{
+margin-top:15px;
+background:#f4c542;
+color:#000;
+padding:10px;
+text-align:center;
+border-radius:10px;
+font-size:17px;
+font-weight:bold;
+border:2px solid #d4a017;
+}
+
+/* CONTENT */
+
+.content{
+padding:28px 22px;
+text-align:center;
+}
+
+.icon{
+font-size:65px;
+margin-bottom:10px;
+}
+
+.title{
+font-size:28px;
+font-weight:bold;
+color:#0d7c3b;
+margin-bottom:8px;
+}
+
+.subtitle{
+font-size:18px;
+color:#444;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.text{
+font-size:17px;
+color:#666;
+line-height:28px;
+margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.startBtn{
+width:100%;
+padding:18px;
+border:none;
+border-radius:14px;
+background:#16a34a;
+color:#fff;
+font-size:24px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 20px rgba(22,163,74,.6);
+transition:.3s;
+animation:pulse 1.5s infinite;
+}
+
+.startBtn:hover{
+background:#138a3d;
+}
+
+.startBtn:active{
+transform:scale(.97);
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.04);}
+100%{transform:scale(1);}
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:25px;
+padding-top:15px;
+border-top:1px solid #ddd;
+font-size:15px;
+color:#555;
+font-weight:bold;
+line-height:28px;
+}
+
+.check{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:20px;
+height:20px;
+background:#138a36;
+color:#fff;
+border-radius:4px;
+font-size:13px;
+margin-right:6px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div class="schoolBox">
+
+<img src="Images/logo.jpg" class="logo">
+
+<div class="schoolName">
+MSG HI-TECH GURUKUL<br>
+GIRLS' SCHOOL, BUDNI
+</div>
+
+</div>
+
+<div class="electionTag">
+STUDENT COUNCIL ELECTION 2026
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="icon">🗳️</div>
+
+<div class="title">
+Electronic Voting Machine
+</div>
+
+<div class="subtitle">
+Welcome to Digital Voting
+</div>
+
+<div class="text">
+Please cast your vote carefully.<br>
+Every vote matters and your vote will remain confidential.
+</div>
+
+<button class="startBtn" onclick="location.href='newvoter.html'">
+START VOTING
+</button>
+
+<div class="footer">
+
+<span class="check">✓</span> Secure Voting<br>
+
+<span class="check">✓</span> Fair Election<br>
+
+<span class="check">✓</span> Confidential Process
+
+</div>
+
+</div>
+
+</div>
+
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

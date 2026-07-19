@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#eef7ef;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    width:90%;
+    max-width:360px;
+    background:#fff;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+h2{
+    color:#138A36;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:15px 0;
+    font-size:16px;
+    border:2px solid #138A36;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#138A36;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2 style="color:red;font-size:40px;">THIS IS ADMIN PAGE</h2>
+
+<input type="password" id="pass" placeholder="Enter Password">
+
+<button onclick="login()">LOGIN</button>
+
+</div>
+
+<script>
+
+function login(){
+
+    if(document.getElementById("pass").value=="Elections2026"){
+        window.location.href="result.html";
+    }
+    else{
+        alert("Wrong Password");
+    }
+
+}
+
+</script>
+
+</body>
+</html>
